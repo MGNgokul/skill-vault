@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Analytics | SkillVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+body{
+  background:#f4f6f9;
+}
+.navbar{
+  height:60px;
+  background:#1e1e2f;
+  color:#4db5ff;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  font-size:22px;
+  font-weight:bold;
+}
+.layout{
+  display:flex;
+  min-height:calc(100vh - 60px);
+  transition:.3s;
+}
+.sidebar{
+  width:240px;
+  background:#fff;
+  box-shadow:2px 0 10px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+.sidebar.hidden{
+  width:0;
+  overflow:hidden;
+}
+.sidebar a{
+  display:block;
+  padding:15px 20px;
+  text-decoration:none;
+  color:#333;
+}
+.sidebar a:hover,
+.sidebar a.active{
+  background:#e6f2ff;
+  color:#4db5ff;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding:30px;
+  transition:.3s;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+}
+.card h3{
+  font-size:16px;
+  color:#777;
+}
+.card p{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:10px;
+}
+.back-btn{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  cursor:pointer;
+}
+.back-btn button{
+  padding:8px 14px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor: pointer;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+@media(max-width:768px){
+  .sidebar{
+    position:absolute;
+    z-index:10;
+    height:100%;
+  }
+}
+</style>
+
+
+
+</head>
+<body>
+  
+
+<div class="navbar">SkillVault – Analytics</div>
+
+<div class="layout">
+  <div class="main">
+    <h2>Learning Analytics</h2>
+    <p style="margin-bottom:20px;color:#666;">
+      Track your learning progress and performance insights
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Skills Completed</h3>
+        <p>10</p>
+      </div>
+      <div class="card">
+        <h3>Hours Spent</h3>
+        <p>120</p>
+      </div>
+      <div class="card">
+        <h3>Certificates Earned</h3>
+        <p>4</p>
+      </div>
+      <div class="card">
+        <h3>Weekly Growth</h3>
+        <p>+15%</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-btn">
+  <button onclick="history.back()">← Back</button>
+</div>
+
+</body>
+</html>

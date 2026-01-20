@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dashboard | SkillVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+body{
+  background:#f4f6f9;
+}
+
+.navbar{
+  background:#1e1e2f;
+  color:#2886c9;
+  padding:15px 25px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  min-height:calc(100vh - 60px);
+}
+
+.sidebar{
+  background:#fff;
+  box-shadow:2px 0 10px rgba(0,0,0,0.1);
+}
+.sidebar a{
+  display:block;
+  padding:15px 20px;
+  text-decoration:none;
+  color:#333;
+}
+.sidebar a:hover,
+.sidebar a.active{
+  background:#e6f2ff;
+  color:#4db5ff;
+}
+
+.main{
+  padding:30px;
+  display:grid;
+  grid-template-rows:auto auto auto;
+  gap:30px;
+}
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.kpi{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+.kpi:hover{
+  transform:translateY(-6px);
+}
+.kpi h4{
+  font-size:14px;
+  color:#777;
+}
+.kpi p{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.progress-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.progress-card{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+}
+.progress{
+  background:#ddd;
+  height:10px;
+  border-radius:10px;
+  margin-top:10px;
+}
+.progress span{
+  display:block;
+  height:100%;
+  background:#4db5ff;
+  width:0;
+  border-radius:10px;
+  transition:1s;
+}
+
+.activity-grid{
+  display:grid;
+  grid-template-columns:1fr;
+}
+.activity{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+}
+.activity div{
+  padding:10px 0;
+  border-bottom:1px solid #eee;
+}
+.activity div:last-child{
+  border-bottom:none;
+}
+
+.back-btn{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  cursor: pointer;
+}
+.back-btn button{
+  padding:8px 15px;
+  font-size:13px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor:pointer;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+
+@media(max-width:768px){
+  .dashboard-grid{
+    grid-template-columns:1fr;
+  }
+  .sidebar{
+    display:grid;
+    grid-auto-flow:column;
+    overflow-x:auto;
+  }
+  .sidebar a{
+    white-space:nowrap;
+  }
+}
+
+.dashboard-page{
+  background-image:url("images/dashboard-bg.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:100vh;
+}
+.dashboard-page::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.25);
+  z-index:-1;
+}
+</style>
+
+<script>
+window.onload=()=>{
+  document.querySelectorAll(".progress span").forEach(bar=>{
+    bar.style.width=bar.dataset.value+"%";
+  });
+}
+</script>
+
+</head>
+<body class="dashboard-page">
+
+<div class="navbar">SkillVault Dashboard</div>
+
+<div class="dashboard-grid">
+
+  <div class="sidebar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="skills.html">Skills</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="profile.html">Profile</a>
+    <a href="settings.html">Settings</a>
+    <a href="help.html">Help</a>
+    <a href="progress.html">Progress</a>
+    <a href="resume.html">Resume</a>
+    <a href="certificates.html">Certificates</a>  
+  </div>
+
+  <div class="main">
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <h4>Total Skills</h4>
+        <p>18</p>
+      </div>
+      <div class="kpi">
+        <h4>Completed</h4>
+        <p>10</p>
+      </div>
+      <div class="kpi">
+        <h4>In Progress</h4>
+        <p>8</p>
+      </div>
+      <div class="kpi">
+        <h4>Certificates</h4>
+        <p>4</p>
+      </div>
+    </div>
+
+    <div class="progress-grid">
+      <div class="progress-card">
+        HTML
+        <div class="progress"><span data-value="90"></span></div>
+      </div>
+      <div class="progress-card">
+        CSS
+        <div class="progress"><span data-value="75"></span></div>
+      </div>
+      <div class="progress-card">
+        JavaScript
+        <div class="progress"><span data-value="60"></span></div>
+      </div>
+    </div>
+
+    <div class="activity-grid">
+      <div class="activity">
+        <div>✔ Completed HTML Basics</div>
+        <div>📘 Started JavaScript Roadmap</div>
+        <div>🏆 Added CSS Certificate</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-btn">
+  <button onclick="history.back()">← Back</button>
+</div>
+
+</body>
+</html>

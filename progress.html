@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Progress | SkillVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+body{
+  background:#f4f6f9;
+}
+
+.navbar{
+  height:60px;
+  background:#1e1e2f;
+  color:#4db5ff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
+  font-size:22px;
+  font-weight:bold;
+}
+.navbar a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  margin-left:15px;
+}
+
+.main{
+  padding:30px;
+}
+
+.summary{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin-bottom:30px;
+}
+.summary-box{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+}
+.summary-box h3{
+  font-size:14px;
+  color:#777;
+}
+.summary-box p{
+  font-size:28px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.skill-section{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+}
+.skill{
+  margin-bottom:20px;
+}
+.skill:last-child{
+  margin-bottom:0;
+}
+.skill-header{
+  display:flex;
+  justify-content:space-between;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.progress-bar{
+  background:#ddd;
+  height:12px;
+  border-radius:10px;
+}
+.progress-bar span{
+  display:block;
+  height:100%;
+  width:0;
+  background:#4db5ff;
+  border-radius:10px;
+  transition:1s;
+}
+
+.status{
+  font-size:12px;
+  margin-top:5px;
+  color:#4db5ff;
+}
+
+.back-btn{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.back-btn button{
+  padding:8px 14px;
+  font-size:13px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor: pointer;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+
+@media(max-width:600px){
+  .navbar{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+    gap:10px;
+  }
+}
+</style>
+
+<script>
+window.onload = () => {
+  document.querySelectorAll(".progress-bar span").forEach(bar=>{
+    bar.style.width = bar.dataset.value + "%";
+  });
+};
+</script>
+
+</head>
+<body>
+
+<div class="navbar">
+  SkillVault Progress
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="resume.html">Resume</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="summary">
+    <div class="summary-box">
+      <h3>Total Skills</h3>
+      <p>18</p>
+    </div>
+    <div class="summary-box">
+      <h3>Completed</h3>
+      <p>10</p>
+    </div>
+    <div class="summary-box">
+      <h3>In Progress</h3>
+      <p>8</p>
+    </div>
+    <div class="summary-box">
+      <h3>Overall Progress</h3>
+      <p>65%</p>
+    </div>
+  </div>
+
+  <div class="skill-section">
+    <h2>Skill Progress</h2><br>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>HTML</span>
+        <span>90%</span>
+      </div>
+      <div class="progress-bar">
+        <span data-value="90"></span>
+      </div>
+      <div class="status">✔ Completed</div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>CSS</span>
+        <span>75%</span>
+      </div>
+      <div class="progress-bar">
+        <span data-value="75"></span>
+      </div>
+      <div class="status">⏳ In Progress</div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>JavaScript</span>
+        <span>60%</span>
+      </div>
+      <div class="progress-bar">
+        <span data-value="60"></span>
+      </div>
+      <div class="status">⏳ In Progress</div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>React</span>
+        <span>40%</span>
+      </div>
+      <div class="progress-bar">
+        <span data-value="40"></span>
+      </div>
+      <div class="status">🔒 Locked</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="back-btn">
+  <button onclick="history.back()">← Back</button>
+</div>
+
+</body>
+</html>

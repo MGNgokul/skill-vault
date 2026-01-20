@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Profile | SkillVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+body{
+  background:linear-gradient(120deg,#c4c8ca,#f2f2f5);
+  min-height:100vh;
+}
+
+.navbar{
+  background:#1e1e2f;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+}
+.logo{
+  color:#4db5ff;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.profile-card{
+  background:white;
+  max-width:850px;
+  margin:40px auto;
+  border-radius:15px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+  overflow:hidden;
+}
+
+.profile-header{
+  background:linear-gradient(120deg,#6c63ff,#4db5ff);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+.profile-header img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:4px solid white;
+  object-fit:cover;
+}
+.upload-btn{
+  margin-top:10px;
+  font-size:14px;
+}
+
+.profile-body{
+  padding:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+}
+.field label{
+  font-weight:bold;
+  margin-bottom:5px;
+}
+.field input{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.skills{
+  grid-column:span 2;
+}
+.skill-tags span{
+  display:inline-block;
+  background:#e6f2ff;
+  color:#1e1e2f;
+  padding:6px 12px;
+  border-radius:20px;
+  margin:5px;
+  font-size:14px;
+}
+
+.actions{
+  grid-column:span 2;
+  text-align:center;
+}
+.actions button{
+  padding:12px 25px;
+  margin:10px;
+  border:none;
+  border-radius:25px;
+  background:#4db5ff;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.actions button:hover{
+  background:#6c63ff;
+  transform:scale(1.05);
+}
+.back-btn{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.back-btn button{
+  padding:8px 14px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor:pointer;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+
+@media(max-width:700px){
+  .profile-body{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">SkillVault- Profile</div>
+  <div>
+    <a href="landing.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+</div>
+
+<div class="profile-card">
+
+  <div class="profile-header">
+    <img id="profileImg" src="https://static.vecteezy.com/system/resources/previews/020/292/860/original/app-profile-icon-male-online-dp-graphic-icon-free-vector.jpg">
+    <div class="upload-btn">
+      <input type="file" onchange="previewImage(event)">
+    </div>
+    <h2>Gokulnath</h2>
+    <p>Frontend Developer</p>
+  </div>
+
+  <div class="profile-body">
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" value="gokul@gmail.com" >
+    </div>
+
+    <div class="field">
+      <label>Phone</label>
+      <input type="text" value="9876543210" >
+    </div>
+
+    <div class="field">
+      <label>College</label>
+      <input type="text" value="ABC Engineering College" >
+    </div>
+
+    <div class="field">
+      <label>Career Goal</label>
+      <input type="text" value="Frontend Engineer">
+    </div>
+
+    <div class="skills">
+      <label><strong>Skills</strong></label>
+      <div class="skill-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button onclick="enableEdit()">Edit Profile</button>
+      <button>Save Changes</button>
+    </div>
+
+  </div>
+</div>
+<div class="back-btn">
+    <button onclick="history.back()">← Back</button>
+  </div>
+
+</body>
+</html>

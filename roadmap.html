@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Learning Roadmap | SkillVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+body{
+  background:#f4f6f9;
+}
+
+.navbar{
+  background:#1e1e2f;
+  color:#4db5ff;
+  padding:16px 25px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.roadmap{
+  width:100%;
+  padding:40px 8%;
+}
+
+.step{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:40px;
+  box-shadow:0 12px 24px rgba(0,0,0,0.1);
+  position:relative;
+}
+.step:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-40px;
+  width:4px;
+  height:40px;
+  background:#4db5ff;
+}
+.step:last-child:before{
+  display:none;
+}
+
+.step-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.step-header span{
+  background:#4db5ff;
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+}
+
+.skills{
+  margin-top:20px;
+}
+.skill{
+  display:inline-block;
+  background:#e6f2ff;
+  padding:8px 12px;
+  margin:6px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+.skill:hover{
+  background:#4db5ff;
+  color:white;
+}
+
+.links{
+  margin-top:15px;
+}
+.links a{
+  display:inline-block;
+  margin-right:15px;
+  color:#4db5ff;
+  text-decoration:none;
+  font-size:14px;
+  cursor: pointer;
+}
+
+.back-btn{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.back-btn button{
+  padding:8px 14px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor:pointer;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+
+@media(max-width:600px){
+  .roadmap{
+    padding:20px;
+  }
+  .step:before{
+    left:20px;
+  }
+}
+</style>
+
+<script>
+function openResource(url){
+  window.open(url,'_blank');
+}
+</script>
+
+</head>
+<body>
+
+<div class="navbar">SkillVault – Learning Roadmap</div>
+
+<div class="roadmap">
+
+  <div class="step">
+    <div class="step-header">
+      <h2>HTML Fundamentals</h2>
+      <span>Step 1</span>
+    </div>
+    <p>Learn how to structure web pages using semantic HTML.</p>
+
+    <div class="skills">
+      <div class="skill">HTML Tags</div>
+      <div class="skill">Forms</div>
+      <div class="skill">Tables</div>
+    </div>
+
+    <div class="links">
+      <a onclick="openResource('https://developer.mozilla.org/en-US/docs/Web/HTML')">MDN</a>
+      <a onclick="openResource('https://www.w3schools.com/html/')">W3Schools</a>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <h2>CSS Styling</h2>
+      <span>Step 2</span>
+    </div>
+    <p>Create responsive layouts and animations using CSS.</p>
+
+    <div class="skills">
+      <div class="skill">Flexbox</div>
+      <div class="skill">Grid</div>
+      <div class="skill">Media Queries</div>
+    </div>
+
+    <div class="links">
+      <a onclick="openResource('https://css-tricks.com/')">CSS Tricks</a>
+      <a onclick="openResource('https://www.w3schools.com/css/')">W3Schools</a>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <h2>JavaScript</h2>
+      <span>Step 3</span>
+    </div>
+    <p>Make websites interactive using JavaScript.</p>
+
+    <div class="skills">
+      <div class="skill">DOM</div>
+      <div class="skill">Events</div>
+      <div class="skill">API</div>
+    </div>
+
+    <div class="links">
+      <a onclick="openResource('https://javascript.info/')">JavaScript.info</a>
+      <a onclick="openResource('https://www.w3schools.com/js/')">W3Schools</a>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <h2>Frameworks & Tools</h2>
+      <span>Step 4</span>
+    </div>
+    <p>Build scalable applications and deploy them.</p>
+
+    <div class="skills">
+      <div class="skill">React</div>
+      <div class="skill">Git</div>
+      <div class="skill">Deployment</div>
+    </div>
+
+    <div class="links">
+      <a onclick="openResource('https://react.dev')">React</a>
+      <a onclick="openResource('https://github.com')">GitHub</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="back-btn">
+  <button onclick="history.back()">← Back</button>
+</div>
+
+</body>
+</html>

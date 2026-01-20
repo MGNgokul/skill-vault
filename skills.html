@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills | SkillVault</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+html, body{
+  width:100%;
+  height:100%;
+  background:#f4f6f9;
+}
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:30px;
+}
+.header{
+  text-align:center;
+  margin-bottom:40px;
+}
+.header h1{
+  font-size:36px;
+  color:#1e1e2f;
+}
+.header p{
+  color:#555;
+  margin-top:10px;
+  font-size:16px;
+}
+.skill-grid{
+  width:100%;
+  max-width:1200px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:25px;
+}
+
+.skill-card{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:0.3s;
+  cursor:pointer;
+}
+.skill-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 16px 30px rgba(0,0,0,0.2);
+}
+.skill-card img{
+  width:80px;
+  height:80px;
+  margin-bottom:15px;
+}
+.skill-card h3{
+  font-size:20px;
+  color:#1e1e2f;
+  margin-bottom:8px;
+}
+.skill-card p{
+  font-size:14px;
+  color:#555;
+}
+.status{
+  margin-top:12px;
+  font-size:12px;
+  padding:4px 12px;
+  border-radius:20px;
+  display:inline-block;
+}
+.completed{
+  background:#d4f7dc;
+  color:#1b7a2a;
+}
+.inprogress{
+  background:#fff3cd;
+  color:#856404;
+}
+.locked{
+  background:#f8d7da;
+  color:#721c24;
+}
+.back-btn{
+  margin-top:40px;
+}
+.back-btn button{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:10px 20px;
+  font-size:14px;
+  border:none;
+  border-radius:12px;
+  background:#1e1e2f;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+.back-btn button:hover{
+  background:#4db5ff;
+}
+@media(max-width:900px){
+  .skill-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:500px){
+  .skill-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>My Skills</h1>
+    <p>View and manage your learning skills</p>
+  </div>
+
+  <div class="skill-grid">
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png">
+      <h3>HTML</h3>
+      <p>Web structure & semantics</p>
+      <span class="status completed">Completed</span>
+    </div>
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png">
+      <h3>CSS</h3>
+      <p>Styling & responsive design</p>
+      <span class="status inprogress">In Progress</span>
+    </div>
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png">
+      <h3>JavaScript</h3>
+      <p>Logic & dynamic UI</p>
+      <span class="status inprogress">In Progress</span>
+    </div>
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png">
+      <h3>React</h3>
+      <p>Component-based UI</p>
+      <span class="status locked">Locked</span>
+    </div>
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png">
+      <h3>Java</h3>
+      <p>Backend & OOP</p>
+      <span class="status inprogress">In Progress</span>
+    </div>
+
+    <div class="skill-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png">
+      <h3>SQL</h3>
+      <p>Database queries</p>
+      <span class="status completed">Completed</span>
+    </div>
+
+  </div>
+
+  <div class="back-btn">
+    <button onclick="history.back()">← Back</button>
+  </div>
+
+</div>
+
+</body>
+</html>
