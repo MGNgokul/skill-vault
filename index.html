@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SkillVault | Landing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#1e1e2f,#4db5ff);
+}
+yu7j7
+/* NAVBAR (UNCHANGED) */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 25px;
+  background:#1e1e2f;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+}
+.logo img{
+  width:40px;
+  margin-right:10px;
+  border-radius:8px;
+}
+.logo span{
+  color:#4db5ff;
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.nav-links a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+.nav-links a:hover{
+  color:#4db5ff;
+}
+
+/* FULL PAGE CENTER */
+.container{ 
+  min-height:calc(100vh - 70px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+.card{
+  width:100%;
+  max-width:900px;
+  min-height:65vh;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(16px);
+  border-radius:30px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.3);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px;
+  color:white;
+  transition:0.4s;
+}
+.card:hover{
+  transform:scale(1.03);
+}
+.card h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+.card p{
+  font-size:18px;
+  opacity:0.9;
+  margin-bottom:35px;
+}
+.btn{
+  padding:15px 40px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  background:#1e1e2f;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+.btn:hover{
+  background:#4db5ff;
+}
+@media(max-width:768px){
+  .card{
+    min-height:70vh;
+    padding:35px;
+  }
+  .card h1{
+    font-size:34px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="https://static.vecteezy.com/system/resources/previews/011/482/188/non_2x/driving-school-logo-design-steering-wheel-with-cog-and-book-icon-free-vector.jpg" alt="SkillVault Logo">
+    <span>SkillVault</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h1>Track Skills. Build Career.</h1>
+    <p>Your personal dashboard to learn, track, and grow your skills</p>
+    <a href="login.html">
+      <button class="btn">Get Started</button>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
